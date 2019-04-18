@@ -227,8 +227,27 @@ var url = window.location.href;
 height:50vh;
 ">
     
-    <!-- 主页  -->
-    
+    <!-- Random Bkg  -->
+    <script type="text/javascript">
+    //<!CDATA[
+        var bodyBgs = [];
+        bodyBgs[0] = "intro/01.jpg";
+        bodyBgs[1] = "intro/02.png";
+        bodyBgs[2] = "intro/03.jpg";
+        bodyBgs[3] = "intro/04.jpg";
+        bodyBgs[4] = "intro/05.jpg";
+        bodyBgs[5] = "intro/06.jpg";
+        bodyBgs[6] = "intro/07.jpg";
+
+        var randomBgIndex = Math.round( Math.random() * 7 )%7;
+
+    //random output backgroud picture
+        //document.write('<style>body{background:url(' + bodyBgs[randomBgIndex] + ') no-repeat 50% 0}</style>');
+        document.write('<div class="site-intro-img" style="background-image: url(/~xqkong/public/');
+        document.write(bodyBgs[randomBgIndex]);
+        document.write(')\"></div>');
+    //]]>
+    </script>
     
     <!-- 404页  -->
             
