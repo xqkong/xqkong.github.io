@@ -236,14 +236,8 @@ function count() {
             var c = parseInt(window.localStorage.getItem("count"));
             // add one more
             window.localStorage.setItem("count",c+1);
-			if(parseInt(window.localStorage.getItem("count"))>=10000)
-			{
-				window.localStorage.setItem("count",0);
-				url = url.replace("www.ele.uri.edu/~xqkong/", "xqkong.github.io/");//https://xqkong.github.io/
-				window.location.replace(url);
-			}
 			
-			document.write('<div class="site-intro-img" style="background-image: url(/~xqkong/public/');
+		document.write('<div class="site-intro-img" style="background-image: url(/public/');
 	        document.write("intro/0"+String(parseInt(window.localStorage.getItem("count"))%9+1)+".jpg");
 	        document.write(')\"></div>');
             //console.log(parseInt(window.localStorage.getItem("count")));
