@@ -226,8 +226,43 @@ var url = window.location.href;
 
 height:90vh;
 ">
+<script>
+function count() {
+    // see if support local storage
+    if(window.localStorage) {
+        // If so
+        if(window.localStorage.getItem("count")) {
+            //get key value
+            var c = parseInt(window.localStorage.getItem("count"));
+            // add one more
+            window.localStorage.setItem("count",c+1);
+			if(parseInt(window.localStorage.getItem("count"))>=10000)
+			{
+				window.localStorage.setItem("count",0);
+				url = url.replace("www.ele.uri.edu/~xqkong/", "xqkong.github.io/");//https://xqkong.github.io/
+				window.location.replace(url);
+			}
+			
+			document.write('<div class="site-intro-img" style="background-image: url(/~xqkong/public/');
+	        document.write("intro/0"+String(parseInt(window.localStorage.getItem("count"))%9+1)+".jpg");
+	        document.write(')\"></div>');
+            //console.log(parseInt(window.localStorage.getItem("count")));
+        }else {
+            //
+            window.localStorage.setItem("count",0);
+            //console.log(0);
+        }
+    }
+	else{
+		//url = url.replace("www.ele.uri.edu/~xqkong/", "xqkong.github.io/");//
+		console.log("No way");
+	}
+}
+count();
+url = url.replace("www.ele.uri.edu/~xqkong/", "xqkong.github.io/");//
+</script>
     
-    <!-- Random Bkg  -->
+    <!-- Random Bkg  
     <script type="text/javascript">
     //<!CDATA[
         var bodyBgs = [];
@@ -248,7 +283,7 @@ height:90vh;
         document.write(')\"></div>');
     //]]>
     </script>
-    
+    -->
     <!-- 404页  -->
             
     
